@@ -154,6 +154,32 @@
   .target-card .tc-label{ font-size:0.78rem; color:var(--text-dim); font-weight:600; }
   .target-card .tc-value{ font-size:1.2rem; font-weight:800; color:var(--emerald); margin-top:6px; }
 
+  .example-box{
+    margin-top:16px; border:1px solid var(--emerald-border); border-radius:12px; padding:16px 18px;
+    background: rgba(16,185,129,0.05); font-size:0.88rem; color: var(--text-dim); line-height:1.6;
+  }
+  .example-box .ex-label{ color: var(--emerald); font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px; }
+
+  .toolkit{ margin-top: 36px; padding-top: 28px; border-top: 1px dashed rgba(16,185,129,0.22); }
+  .toolkit-label{ font-size:0.8rem; color:var(--text-dim); margin-bottom:16px; text-align:center; }
+  .toolkit-label strong{ color: var(--emerald); }
+  .toolkit-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
+  @media (max-width:700px){ .toolkit-grid{ grid-template-columns:1fr; } }
+  .toolkit-card{
+    border:1px solid var(--emerald-border); border-radius:12px; padding:16px; text-align:center;
+    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
+    display:flex; flex-direction:column; align-items:center; gap:8px; transition: all .2s ease;
+  }
+  .toolkit-card:hover{ transform: translateY(-3px); border-color: var(--emerald); }
+  .toolkit-card .tk-icon{
+    width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:0.85rem; background: var(--emerald-soft); color: var(--emerald);
+  }
+  .toolkit-card h4{ font-size:0.92rem; font-weight:800; }
+  .toolkit-card p{ font-size:0.75rem; color:var(--text-dim); }
+  .toolkit-card a{ font-size:0.82rem; font-weight:700; color: var(--emerald); margin-top:2px; }
+  .toolkit-card a:hover{ text-decoration: underline; }
+
   /* FAQ / Accordion */
   .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:760px; margin:0 auto; }
   .faq-item{
@@ -221,6 +247,7 @@
       <a href="#leverage">Leverage Calculator</a>
       <a href="#buyzone">Buy Zone Signal</a>
       <a href="#faq">FAQ</a>
+      <a href="/blog/">Blog</a>
       <a href="#platforms">Platforms</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
@@ -229,15 +256,16 @@
     <a href="#leverage">Leverage Calculator</a>
     <a href="#buyzone">Buy Zone Signal</a>
     <a href="#faq">FAQ</a>
+    <a href="/blog/">Blog</a>
     <a href="#platforms">Platforms</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <div class="pill">⚡ Real-Time Market Tools</div>
-    <h1>Trade smarter with <em>Buy Zone</em> precision.</h1>
-    <p>Actionable market metrics, leverage tools, and momentum indicators built for traders who want clear signals — not noise.</p>
+    <div class="pill">⚡ Zero Fluff. Just Signals.</div>
+    <h1>Skip the math. Know your <em>Buy Zone</em> instantly.</h1>
+    <p>Type in a price. Get your zone, your targets, your leverage — done. No spreadsheets, no guesswork, no manual math during a trade.</p>
     <div class="hero-ctas">
       <a href="#leverage" class="btn btn-primary">Try the Calculators</a>
       <a href="#platforms" class="btn btn-ghost">Explore Platforms</a>
@@ -281,6 +309,30 @@
           <div class="result-row"><span>Total Estimated Return</span><strong id="outReturn">$0.00</strong></div>
           <div class="result-row highlight"><span>Percentage Gain</span><strong id="outPercent">0.00%</strong></div>
           <div class="result-row"><span>Projected Total Account Value</span><strong id="outTotal">$0.00</strong></div>
+          <div class="example-box"><span class="ex-label">Real example</span>SPY is at $500 and you're eyeing 0DTE calls. You think it moves 2% today, and your position acts like 5x leverage. Plug in $1,000 / 2% / 5x — you'll see the payout before you risk a dollar.</div>
+        </div>
+      </div>
+      <div class="toolkit">
+        <div class="toolkit-label">🛠️ <strong>Execute this trade</strong> — the platforms built for options & leveraged plays</div>
+        <div class="toolkit-grid">
+          <div class="toolkit-card">
+            <div class="tk-icon">RH</div>
+            <h4>Robinhood</h4>
+            <p>Fast options execution, zero commission</p>
+            <a href="https://join.robinhood.com/daniell-767703" target="_blank" rel="sponsored noopener noreferrer">Claim Free Stock →</a>
+          </div>
+          <div class="toolkit-card">
+            <div class="tk-icon">WB</div>
+            <h4>Webull</h4>
+            <p>Advanced options chain & charting built in</p>
+            <a href="https://www.webull.com/s/3KhtemAIBUelDQOK2i" target="_blank" rel="sponsored noopener noreferrer">Get 10 Free Shares →</a>
+          </div>
+          <div class="toolkit-card">
+            <div class="tk-icon">SF</div>
+            <h4>SoFi Invest</h4>
+            <p>Simple active investing, no fee active trades</p>
+            <a href="https://www.sofi.com/invite/invest?gcp=95cff9d0-6db2-4412-ac70-a5be3f100715&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer">Get $25 Free →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -317,6 +369,30 @@
             <div class="target-card"><div class="tc-label">+20% Target</div><div class="tc-value" id="target20">$0.00</div></div>
             <div class="target-card"><div class="tc-label">+50% Target</div><div class="tc-value" id="target50">$0.00</div></div>
             <div class="target-card"><div class="tc-label">+100% Target</div><div class="tc-value" id="target100">$0.00</div></div>
+          </div>
+          <div class="example-box"><span class="ex-label">Real example</span>A coin you're watching drops to $0.42 and RSI reads 24. That's a BUY ZONE signal — the calculator instantly shows your targets: $0.50, $0.63, and $0.84, so you know exactly where to take profit before you buy.</div>
+        </div>
+      </div>
+      <div class="toolkit">
+        <div class="toolkit-label">🛠️ <strong>Execute this trade</strong> — the exact exchanges to buy the dip</div>
+        <div class="toolkit-grid">
+          <div class="toolkit-card">
+            <div class="tk-icon">CB</div>
+            <h4>Coinbase</h4>
+            <p>Fastest way to buy crypto in the zone</p>
+            <a href="https://coinbase.com/join/CR9AB53?src=android-link" target="_blank" rel="sponsored noopener noreferrer">Trade & Earn →</a>
+          </div>
+          <div class="toolkit-card">
+            <div class="tk-icon">KR</div>
+            <h4>Kraken Pro</h4>
+            <p>Tighter spreads for active buy zone entries</p>
+            <a href="https://invite.kraken.com/JDNW/9gmzhewe" target="_blank" rel="sponsored noopener noreferrer">Get Up to $200 →</a>
+          </div>
+          <div class="toolkit-card">
+            <div class="tk-icon">SF</div>
+            <h4>SoFi Crypto</h4>
+            <p>Buy, hold, and track it all in one app</p>
+            <a href="https://www.sofi.com/invite/crypto?gcp=64a4dd1b-e0d8-4bb9-99fb-cad5787aad11&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer">Get $25 in Crypto →</a>
           </div>
         </div>
       </div>
