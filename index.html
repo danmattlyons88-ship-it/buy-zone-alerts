@@ -180,6 +180,23 @@
   .toolkit-card a{ font-size:0.82rem; font-weight:700; color: var(--emerald); margin-top:2px; }
   .toolkit-card a:hover{ text-decoration: underline; }
 
+  .creator-strip{
+    text-align:center; padding: 14px 24px; font-size:0.82rem; color: var(--text-dim);
+    border-top: 1px solid var(--emerald-border); border-bottom: 1px solid var(--emerald-border);
+    background: rgba(16,185,129,0.04);
+  }
+  .creator-strip strong{ color: var(--emerald); font-weight:800; }
+
+  /* Mobile touch target tuning */
+  @media (max-width:640px){
+    .field input, .field select{ min-height:48px; font-size:16px; padding:13px 14px; }
+    .btn{ min-height:48px; padding:13px 22px; }
+    .toolkit-card a{ display:inline-block; padding:6px 0; }
+    .faq-question{ padding:20px; }
+    body{ overflow-x:hidden; }
+    .wrap{ padding: 0 18px; }
+  }
+
   /* FAQ / Accordion */
   .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:760px; margin:0 auto; }
   .faq-item{
@@ -272,6 +289,10 @@
     </div>
   </div>
 </section>
+
+<div class="creator-strip">
+  Built by <strong>The Frugal Workin' Man</strong> — real tools for everyday traders, zero fluff.
+</div>
 
 <section id="leverage">
   <div class="wrap">
