@@ -3,666 +3,569 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BuyZone Alerts | Smart Trading Tools & Momentum Indicators</title>
-<meta name="description" content="Actionable market metrics, leverage calculators, and buy zone signal tools for smart traders.">
-
-<meta property="og:title" content="BuyZone Alerts | Smart Trading Tools">
-<meta property="og:description" content="Actionable market metrics, leverage calculators, and buy zone signal tools for smart traders.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buyzonealerts.com">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BuyZone Alerts | Smart Trading Tools">
-<meta name="twitter:description" content="Actionable market metrics, leverage calculators, and buy zone signal tools for smart traders.">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23091210'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='%2310b981' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-
+<title>Buy Zone Alerts — Free Trading Calculators, RSI Buy Zone Signals & Broker Bonuses</title>
+<meta name="description" content="Free leverage calculator, 20% Buy Zone RSI signal tool, and side-by-side broker sign-up bonus comparison for stocks, options, and crypto traders.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --emerald: #10b981;
-    --emerald-soft: rgba(16,185,129,0.12);
-    --emerald-border: rgba(16,185,129,0.25);
-    --bg: #0b0f0e;
-    --text: #e6f5ef;
-    --text-dim: #93a8a0;
-    --red: #ef4444;
+    --bg:#0d0e12;
+    --bg-2:#14161c;
+    --bg-3:#1a1d25;
+    --line:#262a34;
+    --text:#e8eaf0;
+    --muted:#9aa1b0;
+    --green:#00e676;
+    --green-dim:rgba(0,230,118,.12);
+    --red:#ff5252;
+    --amber:#ffca28;
+    --radius:14px;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
-    background: radial-gradient(circle at 20% 0%, #0f1613 0%, #0b0f0e 40%, #090c0b 100%);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-    overflow-x: hidden;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  a{color:inherit; text-decoration:none;}
-  .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.2}
+  a{color:var(--green);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
+  /* ---------- HEADER ---------- */
   header{
-    position: sticky; top:0; z-index:60;
-    backdrop-filter: blur(14px);
-    background: rgba(9,12,11,0.75);
-    border-bottom: 1px solid var(--emerald-border);
-    overflow-x: hidden;
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,14,18,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
   }
-  .nav{ display:flex; align-items:center; justify-content:space-between; padding: 18px 0; flex-wrap:nowrap; gap:12px; }
-  .logo{ font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; display:flex; align-items:center; gap:8px; flex-shrink:0; white-space:nowrap; }
-  .logo-dot{ width:10px; height:10px; border-radius:50%; background: var(--emerald); box-shadow: 0 0 12px 3px rgba(16,185,129,0.7); }
-  .logo span{color: var(--emerald);}
-  .links{ display:flex; gap:28px; font-size:0.9rem; color:var(--text-dim); flex-wrap:nowrap; white-space:nowrap; }
-  .links a:hover{color:var(--emerald);}
-  .menu-btn{
-    display:none; background:none; border:1px solid var(--emerald-border); border-radius:8px;
-    color: var(--text); width:40px; height:40px; cursor:pointer; font-size:1.2rem;
-    align-items:center; justify-content:center; flex-shrink:0;
-  }
-  .mobile-menu{ display:none; flex-direction:column; border-top: 1px solid var(--emerald-border); padding: 14px 24px 20px; gap: 4px; }
-  .mobile-menu a{ padding: 12px 4px; font-size: 0.95rem; color: var(--text-dim); border-bottom: 1px solid rgba(16,185,129,0.08); }
-  .mobile-menu a:hover{ color: var(--emerald); }
-  .mobile-menu.open{ display:flex; }
-  @media (max-width:900px){
-    .links{ display:none !important; }
-    .menu-btn{ display:flex !important; }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;color:var(--text)}
+  .logo span{color:var(--green)}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);font-size:.88rem;font-weight:500;transition:color .15s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--green)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);
+    border-radius:8px;padding:6px 12px;font-size:1.1rem;cursor:pointer}
+  @media(max-width:820px){
+    .menu-btn{display:block}
+    .nav-links{
+      display:none;position:absolute;top:64px;left:0;right:0;
+      flex-direction:column;gap:0;background:var(--bg-2);
+      border-bottom:1px solid var(--line);padding:8px 0;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 20px}
   }
 
-  .hero{ padding: 90px 0 70px; text-align:center; position:relative; }
-  .hero::before{
-    content:""; position:absolute; inset:0;
-    background: radial-gradient(ellipse at center top, rgba(16,185,129,0.14), transparent 60%);
-    pointer-events:none;
-  }
-  .pill{
-    display:inline-flex; align-items:center; gap:8px; border:1px solid var(--emerald-border);
-    background: var(--emerald-soft); padding:6px 16px; border-radius:999px; font-size:0.8rem;
-    color:var(--emerald); margin-bottom:24px; font-weight:600; letter-spacing:0.02em;
-  }
-  .hero h1{ font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight:800; letter-spacing:-0.03em; line-height:1.1; margin-bottom:20px; }
-  .hero h1 em{ font-style:normal; color: var(--emerald); text-shadow: 0 0 30px rgba(16,185,129,0.5); }
-  .hero p{ max-width:640px; margin:0 auto; color: var(--text-dim); font-size: 1.05rem; }
-  .hero-ctas{ margin-top: 34px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-
+  /* ---------- HERO ---------- */
+  .hero{padding:72px 0 56px;text-align:center}
+  .hero h1{font-size:clamp(1.9rem,5vw,3rem);margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto 28px;font-size:1.05rem}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .btn{
-    display:inline-flex; align-items:center; gap:8px; padding: 12px 26px; border-radius: 10px;
-    font-weight:600; font-size:0.95rem; border:1px solid var(--emerald-border);
-    transition: all .25s ease; cursor:pointer;
+    display:inline-block;padding:13px 26px;border-radius:10px;
+    font-weight:600;font-size:.95rem;cursor:pointer;border:none;
+    transition:transform .12s,box-shadow .12s;
   }
-  .btn-primary{ background: var(--emerald); color: #06110c; border-color: var(--emerald); }
-  .btn-primary:hover{ box-shadow: 0 0 24px rgba(16,185,129,0.55); transform: translateY(-1px); }
-  .btn-ghost{ background: transparent; color: var(--text); }
-  .btn-ghost:hover{ border-color: var(--emerald); background: var(--emerald-soft); }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-green{background:var(--green);color:#06210f;box-shadow:0 0 24px rgba(0,230,118,.25)}
+  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-outline:hover{border-color:var(--green);color:var(--green)}
 
-  section{ padding: 60px 0; }
-  .section-head{ text-align:center; margin-bottom:44px; }
-  .section-head .tag{ color: var(--emerald); font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; }
-  .section-head h2{ font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight:800; letter-spacing:-0.02em; margin-top:10px; }
-  .section-head p{ color:var(--text-dim); max-width:560px; margin: 12px auto 0; font-size:0.98rem; }
+  /* ---------- SECTIONS ---------- */
+  section{padding:56px 0;scroll-margin-top:80px}
+  .eyebrow{color:var(--green);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  .sec-title{font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:8px}
+  .sec-sub{color:var(--muted);margin-bottom:32px;max-width:620px}
 
-  .panel{
-    border: 1px solid var(--emerald-border); border-radius: 18px; padding: 32px;
-    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
-    position:relative; overflow:hidden;
+  .card{
+    background:var(--bg-2);border:1px solid var(--line);
+    border-radius:var(--radius);padding:28px;
   }
-  .panel::before{
-    content:""; position:absolute; top:-40%; right:-20%; width:300px; height:300px;
-    background: radial-gradient(circle, rgba(16,185,129,0.15), transparent 70%); pointer-events:none;
-  }
-  .tool-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:28px; }
-  @media (max-width:820px){ .tool-grid{ grid-template-columns: 1fr; } }
+  .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:820px){.tool-grid{grid-template-columns:1fr}}
 
-  .field{ margin-bottom:20px; }
-  .field label{ display:block; font-size:0.82rem; color:var(--text-dim); margin-bottom:8px; font-weight:600; letter-spacing:0.02em; }
-  .field input, .field select{
-    width:100%; background: rgba(255,255,255,0.02); border: 1px solid rgba(16,185,129,0.22);
-    border-radius: 10px; padding: 12px 14px; color: var(--text); font-size: 1rem; outline:none;
-    transition: border-color .2s ease, box-shadow .2s ease; font-family: inherit;
+  label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin:16px 0 6px}
+  label:first-of-type{margin-top:0}
+  input[type=number],input[type=text]{
+    width:100%;background:var(--bg-3);border:1px solid var(--line);
+    border-radius:10px;color:var(--text);padding:12px 14px;font-size:1rem;
+    font-family:'Inter',sans-serif;
   }
-  .field input:focus, .field select:focus{ border-color: var(--emerald); box-shadow: 0 0 0 3px rgba(16,185,129,0.15); }
-  .field select option{ background:#0b0f0e; color:var(--text); }
+  input:focus{outline:2px solid var(--green);outline-offset:1px;border-color:transparent}
 
-  .micro-copy{
-    font-size:0.82rem; color: var(--text-dim); line-height:1.6;
-    border-left: 2px solid var(--emerald-border); padding: 10px 14px; margin-top: 4px;
-    background: rgba(16,185,129,0.04); border-radius: 0 8px 8px 0;
-  }
-  .micro-copy strong{ color: var(--emerald); }
+  .results{margin-top:8px}
+  .res-row{display:flex;justify-content:space-between;align-items:baseline;
+    padding:12px 0;border-bottom:1px solid var(--line)}
+  .res-row:last-child{border-bottom:none}
+  .res-label{color:var(--muted);font-size:.88rem}
+  .res-val{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem}
+  .pos{color:var(--green)}
+  .neg{color:var(--red)}
 
-  .results{ border-top: 1px dashed rgba(16,185,129,0.25); padding-top: 20px; margin-top: 4px; display:flex; flex-direction:column; gap:14px; }
-  .result-row{ display:flex; justify-content:space-between; align-items:baseline; font-size:0.92rem; color:var(--text-dim); }
-  .result-row strong{ font-size:1.25rem; color:var(--text); font-weight:800; }
-  .result-row.highlight strong{ color: var(--emerald); }
+  /* ---------- SIGNAL BADGE ---------- */
+  .signal-badge{
+    display:inline-block;padding:8px 18px;border-radius:999px;
+    font-weight:700;font-size:.9rem;letter-spacing:.04em;margin:14px 0 6px;
+  }
+  .sig-buy{background:var(--green-dim);color:var(--green);border:1px solid var(--green)}
+  .sig-sell{background:rgba(255,82,82,.12);color:var(--red);border:1px solid var(--red)}
+  .sig-neutral{background:rgba(255,202,40,.1);color:var(--amber);border:1px solid var(--amber)}
 
-  .signal-box{ text-align:center; padding: 22px; border-radius: 14px; border: 1px solid var(--emerald-border); margin-bottom: 14px; transition: all .3s ease; }
-  .signal-box .signal-label{ font-size:1.3rem; font-weight:800; letter-spacing:0.03em; }
-  .signal-box .signal-sub{ font-size:0.85rem; color:var(--text-dim); margin-top:6px; }
-  .signal-buy{ border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.08); }
-  .signal-buy .signal-label{ color: var(--emerald); text-shadow:0 0 20px rgba(16,185,129,0.5); }
-  .signal-sell{ border-color: rgba(239,68,68,0.5); background: rgba(239,68,68,0.08); }
-  .signal-sell .signal-label{ color: var(--red); text-shadow:0 0 20px rgba(239,68,68,0.5); }
-  .signal-neutral{ border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
-  .signal-neutral .signal-label{ color: var(--text); }
+  /* ---------- AFFILIATE CALLOUTS ---------- */
+  .callout{
+    margin-top:22px;padding:20px;border-radius:12px;
+    background:linear-gradient(135deg,var(--green-dim),rgba(0,230,118,.04));
+    border:1px solid rgba(0,230,118,.35);
+  }
+  .callout p{font-size:.92rem;margin-bottom:14px}
+  .callout strong{color:var(--green)}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+  .btn-sm{padding:10px 18px;font-size:.85rem;border-radius:8px}
 
-  .targets-label{
-    font-size:0.78rem; color: var(--text-dim); text-transform:uppercase; letter-spacing:0.06em;
-    font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:6px;
+  /* ---------- BONUS MATCHER ---------- */
+  .filter-row{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+  .filter-btn{
+    flex:1;min-width:180px;padding:14px 20px;border-radius:10px;
+    background:var(--bg-2);border:1px solid var(--line);color:var(--muted);
+    font-weight:600;font-size:.92rem;cursor:pointer;transition:all .15s;
   }
-  .targets-label .lock{ font-size:0.9rem; }
+  .filter-btn.active{background:var(--green-dim);border-color:var(--green);color:var(--green)}
+  .bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .bonus-card{
+    background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;transition:border-color .15s;
+  }
+  .bonus-card:hover{border-color:var(--green)}
+  .bonus-card h3{font-size:1.1rem;margin-bottom:4px}
+  .bonus-tag{color:var(--green);font-weight:700;font-size:.95rem;margin-bottom:10px}
+  .bonus-card p{color:var(--muted);font-size:.85rem;flex:1;margin-bottom:16px}
+  .hidden{display:none!important}
 
-  .target-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
-  @media (max-width:520px){ .target-grid{ grid-template-columns:1fr; } }
-  .target-card{ border:1px solid var(--emerald-border); border-radius:12px; padding:16px; text-align:center; background: rgba(16,185,129,0.03); }
-  .target-card .tc-label{ font-size:0.78rem; color:var(--text-dim); font-weight:600; }
-  .target-card .tc-value{ font-size:1.2rem; font-weight:800; color:var(--emerald); margin-top:6px; }
+  /* ---------- FAQ ---------- */
+  details{
+    background:var(--bg-2);border:1px solid var(--line);
+    border-radius:12px;margin-bottom:12px;overflow:hidden;
+  }
+  summary{
+    cursor:pointer;padding:18px 20px;font-weight:600;font-size:.95rem;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--green);font-size:1.3rem;font-weight:400;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  .faq-body{padding:0 20px 18px;color:var(--muted);font-size:.9rem}
 
-  .example-box{
-    margin-top:16px; border:1px solid var(--emerald-border); border-radius:12px; padding:16px 18px;
-    background: rgba(16,185,129,0.05); font-size:0.88rem; color: var(--text-dim); line-height:1.6;
-  }
-  .example-box .ex-label{ color: var(--emerald); font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px; }
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:40px 0 48px;margin-top:24px}
+  footer p{color:var(--muted);font-size:.8rem;margin-bottom:12px;max-width:820px}
+  footer .logo{margin-bottom:16px;display:block}
 
-  .toolkit{ margin-top: 36px; padding-top: 28px; border-top: 1px dashed rgba(16,185,129,0.22); }
-  .toolkit-label{ font-size:0.8rem; color:var(--text-dim); margin-bottom:16px; text-align:center; }
-  .toolkit-label strong{ color: var(--emerald); }
-  .toolkit-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
-  @media (max-width:700px){ .toolkit-grid{ grid-template-columns:1fr; } }
-  .toolkit-card{
-    border:1px solid var(--emerald-border); border-radius:12px; padding:16px; text-align:center;
-    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
-    display:flex; flex-direction:column; align-items:center; gap:8px; transition: all .2s ease;
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn:hover{transform:none}
   }
-  .toolkit-card:hover{ transform: translateY(-3px); border-color: var(--emerald); }
-  .toolkit-card .tk-icon{
-    width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:0.85rem; background: var(--emerald-soft); color: var(--emerald);
-  }
-  .toolkit-card h4{ font-size:0.92rem; font-weight:800; }
-  .toolkit-card p{ font-size:0.75rem; color:var(--text-dim); }
-  .toolkit-card a{ font-size:0.82rem; font-weight:700; color: var(--emerald); margin-top:2px; }
-  .toolkit-card a:hover{ text-decoration: underline; }
-
-  .creator-strip{
-    text-align:center; padding: 14px 24px; font-size:0.82rem; color: var(--text-dim);
-    border-top: 1px solid var(--emerald-border); border-bottom: 1px solid var(--emerald-border);
-    background: rgba(16,185,129,0.04);
-  }
-  .creator-strip strong{ color: var(--emerald); font-weight:800; }
-
-  /* Mobile touch target tuning */
-  @media (max-width:640px){
-    .field input, .field select{ min-height:48px; font-size:16px; padding:13px 14px; }
-    .btn{ min-height:48px; padding:13px 22px; }
-    .toolkit-card a{ display:inline-block; padding:6px 0; }
-    .faq-question{ padding:20px; }
-    body{ overflow-x:hidden; }
-    .wrap{ padding: 0 18px; }
-  }
-
-  /* FAQ / Accordion */
-  .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:760px; margin:0 auto; }
-  .faq-item{
-    border:1px solid var(--emerald-border); border-radius:14px; overflow:hidden;
-    background: linear-gradient(180deg, rgba(16,185,129,0.04), rgba(16,185,129,0.01));
-  }
-  .faq-question{
-    width:100%; text-align:left; background:none; border:none; cursor:pointer;
-    padding: 18px 20px; display:flex; align-items:center; justify-content:space-between;
-    font-size:0.98rem; font-weight:700; color: var(--text); font-family:inherit; gap:12px;
-  }
-  .faq-question:hover{ color: var(--emerald); }
-  .faq-icon{ font-size:1.2rem; color:var(--emerald); font-weight:800; flex-shrink:0; transition: transform .25s ease; }
-  .faq-item.open .faq-icon{ transform: rotate(45deg); }
-  .faq-answer{
-    max-height:0; overflow:hidden; transition: max-height .3s ease, padding .3s ease;
-    padding: 0 20px; font-size:0.92rem; color: var(--text-dim); line-height:1.7;
-  }
-  .faq-item.open .faq-answer{ max-height:400px; padding: 0 20px 20px; }
-
-  .platform-category{ margin-bottom: 44px; }
-  .platform-category:last-child{ margin-bottom: 0; }
-  .category-label{
-    display:flex; align-items:center; gap:12px; font-size:0.8rem; font-weight:700;
-    letter-spacing:0.1em; text-transform:uppercase; color: var(--emerald); margin-bottom:18px;
-  }
-  .category-label::after{ content:""; flex:1; height:1px; background: linear-gradient(90deg, var(--emerald-border), transparent); }
-  .platform-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
-  @media (max-width:900px){ .platform-grid{ grid-template-columns: repeat(2,1fr); } }
-  @media (max-width:560px){ .platform-grid{ grid-template-columns: 1fr; } }
-  .platform-card{
-    border:1px solid var(--emerald-border); border-radius:16px; padding:24px 20px; text-align:center;
-    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
-    transition: all .25s ease; display:flex; flex-direction:column; align-items:center; gap:12px;
-  }
-  .platform-card:hover{ transform: translateY(-4px); border-color: var(--emerald); box-shadow: 0 8px 30px rgba(16,185,129,0.22); }
-  .platform-icon{
-    width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:1rem; background: var(--emerald-soft); border:1px solid var(--emerald-border); color: var(--emerald);
-  }
-  .platform-card h3{ font-size:1.02rem; font-weight:800; }
-  .platform-card p{ font-size:0.8rem; color:var(--text-dim); }
-  .platform-card .btn{ width:100%; justify-content:center; margin-top:auto; }
-
-  .affiliate-note{
-    text-align:center; font-size:0.78rem; color: var(--text-dim);
-    margin-top: 36px; padding-top: 20px; border-top: 1px dashed rgba(16,185,129,0.2);
-  }
-
-  footer{ border-top: 1px solid var(--emerald-border); padding: 40px 0 30px; margin-top: 40px; }
-  .disclaimer{
-    font-size:0.78rem; color: var(--text-dim); max-width: 760px; margin: 0 auto 20px;
-    text-align:center; line-height:1.7; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 20px;
-  }
-  .footer-bottom{ text-align:center; font-size:0.82rem; color: var(--text-dim); }
-  .footer-bottom .brand{ color: var(--emerald); font-weight:700; }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><span class="logo-dot"></span>Buy<span>Zone</span> Alerts</div>
-    <nav class="links">
+    <a href="#top" class="logo">Buy Zone <span>Alerts</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav-links" id="navLinks">
       <a href="#leverage">Leverage Calculator</a>
       <a href="#buyzone">Buy Zone Signal</a>
+      <a href="#bonuses">Bonus Matcher</a>
       <a href="#faq">FAQ</a>
-      <a href="/blog/">Blog</a>
-      <a href="#platforms">Platforms</a>
+      <a href="#brokers">Recommended Brokers</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#leverage">Leverage Calculator</a>
-    <a href="#buyzone">Buy Zone Signal</a>
-    <a href="#faq">FAQ</a>
-    <a href="/blog/">Blog</a>
-    <a href="#platforms">Platforms</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="pill">⚡ Zero Fluff. Just Signals.</div>
-    <h1>Skip the math. Know your <em>Buy Zone</em> instantly.</h1>
-    <p>Type in a price. Get your zone, your targets, your leverage — done. No spreadsheets, no guesswork, no manual math during a trade.</p>
-    <div class="hero-ctas">
-      <a href="#leverage" class="btn btn-primary">Try the Calculators</a>
-      <a href="#platforms" class="btn btn-ghost">Explore Platforms</a>
-    </div>
-  </div>
-</section>
+<main id="top">
 
-<div class="creator-strip">
-  Built by <strong>The Frugal Workin' Man</strong> — real tools for everyday traders, zero fluff.
-</div>
-
-<section id="leverage">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Tool 01</div>
-      <h2>Options & Stock Leverage Calculator</h2>
-      <p>See your projected return instantly as you adjust capital, expected price movement, and leverage.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Know your <em>buy zone</em> before you trade.</h1>
+      <p>Free calculators for options, stocks, and crypto traders. Model your leverage, spot oversold RSI buy zones, set profit targets — then claim the best broker sign-up bonuses available right now.</p>
+      <div class="hero-ctas">
+        <a href="#leverage" class="btn btn-green">Run the Calculator</a>
+        <a href="#bonuses" class="btn btn-outline">See Sign-Up Bonuses</a>
+      </div>
     </div>
-    <div class="panel">
+  </section>
+
+  <!-- TOOL 01: LEVERAGE CALCULATOR -->
+  <section id="leverage">
+    <div class="wrap">
+      <div class="eyebrow">Tool 01</div>
+      <h2 class="sec-title">Options &amp; Stock Leverage Calculator</h2>
+      <p class="sec-sub">Estimate what a move in the underlying could mean for a leveraged position. Results update instantly as you type.</p>
+
       <div class="tool-grid">
-        <div>
-          <div class="field">
-            <label for="capital">Capital Invested ($)</label>
-            <input type="number" id="capital" value="1000" min="0" step="1">
-          </div>
-          <div class="field">
-            <label for="priceIncrease">Est. Underlying Price Increase (%)</label>
-            <input type="number" id="priceIncrease" value="10" step="0.1">
-          </div>
-          <div class="field">
-            <label for="leverageSelect">Effective Leverage Multiple</label>
-            <select id="leverageSelect">
-              <option value="1">1x</option>
-              <option value="2" selected>2x</option>
-              <option value="3">3x</option>
-              <option value="5">5x</option>
-              <option value="10">10x</option>
-              <option value="15">15x</option>
-              <option value="20">20x</option>
-            </select>
-          </div>
-          <p class="micro-copy"><strong>How to use:</strong> Type in your numbers above — the results update automatically as you type. Nothing to click or submit.</p>
-        </div>
-        <div class="results">
-          <div class="result-row"><span>Total Estimated Return</span><strong id="outReturn">$0.00</strong></div>
-          <div class="result-row highlight"><span>Percentage Gain</span><strong id="outPercent">0.00%</strong></div>
-          <div class="result-row"><span>Projected Total Account Value</span><strong id="outTotal">$0.00</strong></div>
-          <div class="example-box"><span class="ex-label">Real example</span>SPY is at $500 and you're eyeing 0DTE calls. You think it moves 2% today, and your position acts like 5x leverage. Plug in $1,000 / 2% / 5x — you'll see the payout before you risk a dollar.</div>
-        </div>
-      </div>
-      <div class="toolkit">
-        <div class="toolkit-label">🛠️ <strong>Execute this trade</strong> — the platforms built for options & leveraged plays</div>
-        <div class="toolkit-grid">
-          <div class="toolkit-card">
-            <div class="tk-icon">RH</div>
-            <h4>Robinhood</h4>
-            <p>Fast options execution, zero commission</p>
-            <a href="https://join.robinhood.com/daniell-767703" target="_blank" rel="sponsored noopener noreferrer">Claim Free Stock →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">WB</div>
-            <h4>Webull</h4>
-            <p>Advanced options chain & charting built in</p>
-            <a href="https://www.webull.com/s/3KhtemAIBUelDQOK2i" target="_blank" rel="sponsored noopener noreferrer">Get 10 Free Shares →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">SF</div>
-            <h4>SoFi Invest</h4>
-            <p>Simple active investing, no fee active trades</p>
-            <a href="https://www.sofi.com/invite/invest?gcp=95cff9d0-6db2-4412-ac70-a5be3f100715&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer">Get $25 Free →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="card">
+          <label for="capital">Capital Invested ($)</label>
+          <input type="number" id="capital" inputmode="decimal" min="0" step="any" placeholder="e.g. 500" value="500">
 
-<section id="buyzone">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Tool 02</div>
-      <h2>20% Buy Zone Signal & Target Calculator</h2>
-      <p>Enter the current price and RSI to get an instant zone read plus profit-taking targets.</p>
+          <label for="pctMove">Est. Underlying Price Increase (%)</label>
+          <input type="number" id="pctMove" inputmode="decimal" step="any" placeholder="e.g. 2" value="2">
+
+          <label for="leverage">Effective Leverage Multiple (x)</label>
+          <input type="number" id="leverage" inputmode="decimal" min="0" step="any" placeholder="e.g. 10" value="10">
+        </div>
+
+        <div class="card">
+          <div class="results">
+            <div class="res-row">
+              <span class="res-label">Total Estimated Return</span>
+              <span class="res-val" id="levReturn">$0.00</span>
+            </div>
+            <div class="res-row">
+              <span class="res-label">Percentage Gain</span>
+              <span class="res-val" id="levPct">0%</span>
+            </div>
+            <div class="res-row">
+              <span class="res-label">Projected Total Account Value</span>
+              <span class="res-val" id="levTotal">$0.00</span>
+            </div>
+          </div>
+
+          <div class="callout" id="levCallout">
+            <p id="levCalloutText">Ready to place this trade? Execute your strategy on <strong>Webull</strong> or <strong>Robinhood</strong> and claim up to 10 free stocks upon sign-up.</p>
+            <div class="cta-row">
+              <a class="btn btn-green btn-sm" data-broker="webull" href="#" target="_blank" rel="noopener sponsored">Get Free Stocks on Webull</a>
+              <a class="btn btn-outline btn-sm" data-broker="robinhood" href="#" target="_blank" rel="noopener sponsored">Claim on Robinhood</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="panel">
+  </section>
+
+  <!-- TOOL 02: BUY ZONE SIGNAL -->
+  <section id="buyzone">
+    <div class="wrap">
+      <div class="eyebrow">Tool 02</div>
+      <h2 class="sec-title">20% Buy Zone Signal &amp; Target Calculator</h2>
+      <p class="sec-sub">Enter any asset's current price and RSI. We'll classify the zone and map your +20%, +50%, and +100% profit targets.</p>
+
       <div class="tool-grid">
-        <div>
-          <div class="field">
-            <label for="assetPrice">Current Asset Price ($)</label>
-            <input type="number" id="assetPrice" value="100" min="0" step="0.01">
-          </div>
-          <div class="field">
-            <label for="rsiValue">Current RSI Value (0–100)</label>
-            <input type="number" id="rsiValue" value="28" min="0" max="100" step="1">
-          </div>
-          <p class="micro-copy"><strong>How to use:</strong> Just type in the price and RSI — everything below updates instantly. The signal and target boxes are results only, not buttons.</p>
+        <div class="card">
+          <label for="assetPrice">Current Asset Price ($)</label>
+          <input type="number" id="assetPrice" inputmode="decimal" min="0" step="any" placeholder="e.g. 62.50" value="100">
+
+          <label for="rsi">Current RSI Value (0&ndash;100)</label>
+          <input type="number" id="rsi" inputmode="decimal" min="0" max="100" step="any" placeholder="e.g. 28" value="28">
+
+          <div id="signalBadge" class="signal-badge sig-buy">BUY ZONE (Oversold)</div>
+          <p class="sec-sub" id="signalNote" style="margin-bottom:0;font-size:.85rem"></p>
         </div>
-        <div>
-          <div id="signalBox" class="signal-box signal-buy">
-            <div class="signal-label" id="signalLabel">BUY ZONE (Oversold)</div>
-            <div class="signal-sub" id="signalSub">RSI is at or below 30 — asset may be undervalued</div>
+
+        <div class="card">
+          <div class="results">
+            <div class="res-row">
+              <span class="res-label">+20% Profit Target</span>
+              <span class="res-val pos" id="t20">$0.00</span>
+            </div>
+            <div class="res-row">
+              <span class="res-label">+50% Profit Target</span>
+              <span class="res-val pos" id="t50">$0.00</span>
+            </div>
+            <div class="res-row">
+              <span class="res-label">+100% Profit Target</span>
+              <span class="res-val pos" id="t100">$0.00</span>
+            </div>
           </div>
-          <div class="targets-label"><span class="lock">🔒</span> Profit Targets (calculated automatically — nothing to click)</div>
-          <div class="target-grid">
-            <div class="target-card"><div class="tc-label">+20% Target</div><div class="tc-value" id="target20">$0.00</div></div>
-            <div class="target-card"><div class="tc-label">+50% Target</div><div class="tc-value" id="target50">$0.00</div></div>
-            <div class="target-card"><div class="tc-label">+100% Target</div><div class="tc-value" id="target100">$0.00</div></div>
-          </div>
-          <div class="example-box"><span class="ex-label">Real example</span>A coin you're watching drops to $0.42 and RSI reads 24. That's a BUY ZONE signal — the calculator instantly shows your targets: $0.50, $0.63, and $0.84, so you know exactly where to take profit before you buy.</div>
-        </div>
-      </div>
-      <div class="toolkit">
-        <div class="toolkit-label">🛠️ <strong>Execute this trade</strong> — the exact exchanges to buy the dip</div>
-        <div class="toolkit-grid">
-          <div class="toolkit-card">
-            <div class="tk-icon">CB</div>
-            <h4>Coinbase</h4>
-            <p>Fastest way to buy crypto in the zone</p>
-            <a href="https://coinbase.com/join/CR9AB53?src=android-link" target="_blank" rel="sponsored noopener noreferrer">Trade & Earn →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">KR</div>
-            <h4>Kraken Pro</h4>
-            <p>Tighter spreads for active buy zone entries</p>
-            <a href="https://invite.kraken.com/JDNW/9gmzhewe" target="_blank" rel="sponsored noopener noreferrer">Get Up to $200 →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">SF</div>
-            <h4>SoFi Crypto</h4>
-            <p>Buy, hold, and track it all in one app</p>
-            <a href="https://www.sofi.com/invite/crypto?gcp=64a4dd1b-e0d8-4bb9-99fb-cad5787aad11&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer">Get $25 in Crypto →</a>
+
+          <div class="callout">
+            <p>Trading this dip? Secure <strong>lower fees</strong> and instant sign-up bonuses on <strong>Kraken Pro</strong> or <strong>Coinbase</strong>.</p>
+            <div class="cta-row">
+              <a class="btn btn-green btn-sm" data-broker="kraken" href="#" target="_blank" rel="noopener sponsored">Trade on Kraken Pro</a>
+              <a class="btn btn-outline btn-sm" data-broker="coinbase" href="#" target="_blank" rel="noopener sponsored">Get Coinbase Bonus</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Help</div>
-      <h2>Frequently Asked Questions</h2>
-      <p>New here? Start with these — they cover the most common questions about the tools above.</p>
-    </div>
-    <div class="faq-list">
+  <!-- BONUS MATCHER -->
+  <section id="bonuses">
+    <div class="wrap">
+      <div class="eyebrow">Bonus Matcher</div>
+      <h2 class="sec-title">What are you trading today?</h2>
+      <p class="sec-sub">Pick a lane and we'll match you with the best current sign-up bonuses.</p>
 
-      <div class="faq-item">
-        <button class="faq-question">What are the three boxes under the Buy Zone signal?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Those are your <strong>profit targets</strong> — not buttons. They automatically show you the price the asset would reach if it went up 20%, 50%, or 100% from the price you typed in. There's nothing to click; they're just there to show you what to watch for if you're planning when to take profit.</div>
+      <div class="filter-row" role="tablist" aria-label="Bonus category filter">
+        <button class="filter-btn active" id="filterStocks" data-cat="stocks">Stocks / Options</button>
+        <button class="filter-btn" id="filterCrypto" data-cat="crypto">Crypto &amp; Banking</button>
+        <button class="filter-btn" id="filterCharting" data-cat="charting">Charting &amp; Tools</button>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-question">Do I need to click anything to get results?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">No. Both calculators update automatically the moment you type a new number into any input box. There's no "submit" or "calculate" button — just type, and the results change instantly.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">What does BUY ZONE, SELL ZONE, and NEUTRAL mean?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><strong>BUY ZONE</strong> means the RSI you entered is 30 or below — the asset has been sold off heavily and may be undervalued. <strong>SELL ZONE</strong> means RSI is 70 or above — the asset has been bought up fast and may be overextended. <strong>NEUTRAL</strong> means RSI is in the middle (31–69) — no strong signal either way. This is a momentum read, not a guarantee.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Where do I find an asset's RSI value?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Most free charting platforms show RSI, including TradingView. Pull up the stock or crypto chart, add the RSI indicator, and read the current number off the chart — then type that number into the calculator.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">What does the Leverage Calculator actually tell me?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">It shows what your return would look like if you invest a certain amount of capital, the asset moves a certain percentage, and you're using leverage (like options or a leveraged position). It multiplies the price move by your leverage to show the effective gain — helpful for sizing a position before you enter it.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Are these tools giving me financial advice?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">No — these are educational calculators only. They do the math for you based on numbers you provide, but they don't recommend trades. Always do your own research and consider talking to a licensed financial advisor before making investment decisions.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="platforms">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Partners</div>
-      <h2>Recommended Trading Platforms &amp; Brokerages</h2>
-      <p>Tools we trust for banking, investing, and trading — organized so you can find what fits.</p>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Banking</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">CH</div>
-          <h3>Chime</h3>
-          <p>No-fee mobile banking &amp; early direct deposit.</p>
-          <a href="https://www.chime.com/r/daniellyons79/?c=s" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get $100 Bonus</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">SF</div>
-          <h3>SoFi Checking &amp; Savings</h3>
-          <p>Banking with cash bonuses up to $475.</p>
-          <a href="https://www.sofi.com/invite/money?gcp=0e4fe226-18e5-4c75-a070-68f6b48a0ae9&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get Signup Bonus</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Brokerages &amp; Investing</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">RH</div>
-          <h3>Robinhood</h3>
-          <p>Commission-free stock &amp; options trading.</p>
-          <a href="https://join.robinhood.com/daniell-767703" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Claim Your Free Stock</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">WB</div>
+      <div class="bonus-grid" id="bonusGrid">
+        <div class="bonus-card" data-cat="stocks">
           <h3>Webull</h3>
-          <p>Commission-free stock, options &amp; crypto trading.</p>
-          <a href="https://www.webull.com/s/3KhtemAIBUelDQOK2i" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Unlock 10 Free Shares</a>
+          <div class="bonus-tag">Up to 10+ free stocks</div>
+          <p>Commission-free stocks and options with advanced charting — a favorite for active options traders. Deposit to unlock free fractional shares.</p>
+          <a class="btn btn-green btn-sm" data-broker="webull" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
         </div>
-        <div class="platform-card">
-          <div class="platform-icon">SF</div>
+        <div class="bonus-card" data-cat="stocks">
+          <h3>Robinhood</h3>
+          <div class="bonus-tag">Free stock on sign-up</div>
+          <p>Simple, fast, commission-free trading for stocks, options, and crypto in one clean app. Link a bank account to claim your free stock.</p>
+          <a class="btn btn-green btn-sm" data-broker="robinhood" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+        </div>
+        <div class="bonus-card" data-cat="stocks">
           <h3>SoFi Invest</h3>
-          <p>Commission-free active investing account.</p>
-          <a href="https://www.sofi.com/invite/invest?gcp=95cff9d0-6db2-4412-ac70-a5be3f100715&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get $25 in Free Stock</a>
+          <div class="bonus-tag">$25+ sign-up bonus</div>
+          <p>Invest, bank, and borrow in one place. Fund a new account to claim your bonus, plus access member perks and no-commission trades.</p>
+          <a class="btn btn-green btn-sm" data-broker="sofi" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
         </div>
-      </div>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Crypto</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">CB</div>
-          <h3>Coinbase</h3>
-          <p>Buy, sell, and earn crypto with ease.</p>
-          <a href="https://coinbase.com/join/CR9AB53?src=android-link" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Trade Crypto &amp; Earn</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">KR</div>
+        <div class="bonus-card hidden" data-cat="crypto">
           <h3>Kraken Pro</h3>
-          <p>Advanced tools for serious crypto traders.</p>
-          <a href="https://invite.kraken.com/JDNW/9gmzhewe" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get Up to $200</a>
+          <div class="bonus-tag">Sign-up bonus + low fees</div>
+          <p>Pro-grade crypto exchange with some of the lowest maker/taker fees around. Great for traders buying dips in the buy zone.</p>
+          <a class="btn btn-green btn-sm" data-broker="kraken" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
         </div>
-        <div class="platform-card">
-          <div class="platform-icon">SF</div>
+        <div class="bonus-card hidden" data-cat="crypto">
+          <h3>Coinbase</h3>
+          <div class="bonus-tag">Crypto bonus on sign-up</div>
+          <p>The easiest on-ramp for buying Bitcoin and top altcoins. Make a qualifying trade after sign-up to earn your crypto bonus.</p>
+          <a class="btn btn-green btn-sm" data-broker="coinbase" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+        </div>
+        <div class="bonus-card hidden" data-cat="crypto">
+          <h3>Chime</h3>
+          <div class="bonus-tag">$100 bonus</div>
+          <p>Fee-free online banking with early direct deposit — get paid up to two days early and earn a bonus with a qualifying direct deposit.</p>
+          <a class="btn btn-green btn-sm" data-broker="chime" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+        </div>
+        <div class="bonus-card hidden" data-cat="crypto">
+          <h3>SoFi Checking &amp; Savings</h3>
+          <div class="bonus-tag">Up to $475 bonus</div>
+          <p>Banking built for savers — competitive APY, no account fees, and cash bonuses for qualifying direct deposits.</p>
+          <a class="btn btn-green btn-sm" data-broker="sofibank" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+        </div>
+        <div class="bonus-card hidden" data-cat="crypto">
           <h3>SoFi Crypto</h3>
-          <p>Buy, sell, and hold crypto in one app.</p>
-          <a href="https://www.sofi.com/invite/crypto?gcp=64a4dd1b-e0d8-4bb9-99fb-cad5787aad11&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get $25 in Crypto</a>
+          <div class="bonus-tag">$25+ in crypto</div>
+          <p>Buy, hold, and track crypto in the same app as your banking and investing — a simple all-in-one option.</p>
+          <a class="btn btn-green btn-sm" data-broker="soficrypto" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
         </div>
-        <div class="platform-card">
-          <div class="platform-icon">BC</div>
+        <div class="bonus-card hidden" data-cat="crypto">
           <h3>BTCC</h3>
-          <p>Crypto trading &amp; futures exchange.</p>
-          <a href="https://btcc.com/invite/Uf2atvv" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Earn Referral Rewards</a>
+          <div class="bonus-tag">Referral rewards</div>
+          <p>Crypto trading and futures exchange for traders who want leveraged crypto exposure alongside spot trading.</p>
+          <a class="btn btn-green btn-sm" data-broker="btcc" href="#" target="_blank" rel="noopener sponsored">Claim Bonus</a>
         </div>
-      </div>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Charting &amp; Tools</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">TV</div>
+        <div class="bonus-card hidden" data-cat="charting">
           <h3>TradingView</h3>
-          <p>Advanced charting and market analysis tools.</p>
-          <a href="https://www.tradingview.com/pricing/?share_your_love=danmattlyons88&mobileapp=true" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Explore TradingView</a>
+          <div class="bonus-tag">Advanced charting</div>
+          <p>The charting platform behind most of the RSI and indicator readings you'll plug into the tools above. Free plan available.</p>
+          <a class="btn btn-green btn-sm" data-broker="tradingview" href="#" target="_blank" rel="noopener sponsored">Explore TradingView</a>
         </div>
       </div>
     </div>
+  </section>
 
-    <p class="affiliate-note">Some links on this page are referral/affiliate links. If you sign up through them, BuyZone Alerts may earn a reward at no extra cost to you.</p>
-  </div>
-</section>
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+      <p class="sec-sub">How the tools work — and what they are (and aren't) for.</p>
 
-<footer>
-  <div class="wrap">
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong> BuyZone Alerts tools are provided for informational and educational purposes only. They do not constitute financial, investment, or trading advice. All calculations are estimates and past performance is not indicative of future results. Trading stocks, options, and cryptocurrency involves substantial risk of loss, and leveraged/futures products carry elevated risk. Always conduct your own research and consult a licensed financial advisor before making investment decisions.
+      <details>
+        <summary>How does the Leverage Calculator work?</summary>
+        <div class="faq-body">It multiplies your estimated underlying price move by your effective leverage. Example: a 2% move at 10x leverage models a 20% gain on your capital. Enter your capital invested, the expected % increase in the underlying, and your leverage multiple — the tool estimates your dollar return, percentage gain, and projected account value. Remember: leverage cuts both ways. The same math applies to losses, and options can lose value even when the underlying moves in your direction (time decay, IV crush).</div>
+      </details>
+
+      <details>
+        <summary>How do I read the RSI Buy Zone signal?</summary>
+        <div class="faq-body">RSI (Relative Strength Index) measures momentum on a 0–100 scale. A reading of 30 or below is traditionally considered oversold — our "Buy Zone" — meaning selling pressure may be exhausted. A reading of 70 or above is considered overbought — the "Sell Zone." Anything between is Neutral. RSI is one indicator, not a guarantee: assets can stay oversold or overbought for a long time, so combine it with price action, volume, and your own risk plan.</div>
+      </details>
+
+      <details>
+        <summary>Where do I find an asset's current RSI value?</summary>
+        <div class="faq-body">Most free charting platforms show RSI. On <a data-broker="tradingview" href="#" target="_blank" rel="noopener sponsored">TradingView</a>, open any chart, click "Indicators," and search "RSI" (default 14-period). Webull and Robinhood also display RSI in their charting tools, and most crypto exchanges like Kraken Pro and Coinbase Advanced include it. The daily (1D) timeframe RSI is the most common reference for swing-trade buy zones.</div>
+      </details>
+
+      <details>
+        <summary>How are the +20% / +50% / +100% profit targets calculated?</summary>
+        <div class="faq-body">They're simple multiples of the current price you enter: price × 1.2, × 1.5, and × 2.0. They're meant as quick reference levels for planning exits and scaling out of positions — not predictions that the asset will reach them.</div>
+      </details>
+
+      <details>
+        <summary>Is this financial advice?</summary>
+        <div class="faq-body">No. Every tool on this site is for informational and educational purposes only. Nothing here is financial, investment, tax, or legal advice, and no calculator output is a recommendation to buy or sell any security or asset. Trading stocks, options, and crypto involves substantial risk, including the possible loss of your entire investment. Always do your own research and consider consulting a licensed financial advisor before trading.</div>
+      </details>
     </div>
-    <div class="footer-bottom">&copy; <span id="year"></span> <span class="brand">BuyZone Alerts</span>. All rights reserved.</div>
-  </div>
-</footer>
+  </section>
+
+  <!-- BROKERS / FOOTER -->
+  <footer id="brokers">
+    <div class="wrap">
+      <a href="#top" class="logo">Buy Zone <span>Alerts</span></a>
+      <p><strong>Affiliate Disclosure:</strong> Some links on this page are referral/affiliate links. If you sign up or make a qualifying deposit through them, buyzonealerts.com may earn a bonus or commission at no extra cost to you. Bonus offers are set by each broker, may change at any time, and typically require qualifying actions (deposits, trades, or direct deposits) — always confirm current terms on the broker's site.</p>
+      <p><strong>Disclaimer:</strong> All tools, signals, and content on this site are for informational and educational purposes only and do not constitute financial advice. Trading involves risk, including possible loss of principal. Past performance does not guarantee future results.</p>
+      <p>&copy; <span id="year"></span> Buy Zone Alerts. All rights reserved.</p>
+    </div>
+  </footer>
+
+</main>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  "use strict";
 
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  /* =========================================================
+     AFFILIATE LINKS — pulled from your live buyzonealerts.com
+     referral codes. Edit any of these six lines if a code changes.
+  ========================================================= */
+  var AFFILIATE_LINKS = {
+    webull:      "https://www.webull.com/s/3KhtemAIBUelDQOK2i",
+    robinhood:   "https://join.robinhood.com/daniell-767703",
+    sofi:        "https://www.sofi.com/invite/invest?gcp=95cff9d0-6db2-4412-ac70-a5be3f100715&isAliasGcp=false",
+    sofibank:    "https://www.sofi.com/invite/money?gcp=0e4fe226-18e5-4c75-a070-68f6b48a0ae9&isAliasGcp=false",
+    soficrypto:  "https://www.sofi.com/invite/crypto?gcp=64a4dd1b-e0d8-4bb9-99fb-cad5787aad11&isAliasGcp=false",
+    coinbase:    "https://coinbase.com/join/CR9AB53?src=android-link",
+    kraken:      "https://invite.kraken.com/JDNW/9gmzhewe",
+    chime:       "https://www.chime.com/r/daniellyons79/?c=s",
+    btcc:        "https://btcc.com/invite/Uf2atvv",
+    tradingview: "https://www.tradingview.com/pricing/?share_your_love=danmattlyons88&mobileapp=true"
+  };
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if(!isOpen){ item.classList.add('open'); }
-    });
+  // Wire every [data-broker] button to its link
+  var brokerBtns = document.querySelectorAll("[data-broker]");
+  for (var i = 0; i < brokerBtns.length; i++) {
+    var key = brokerBtns[i].getAttribute("data-broker");
+    if (AFFILIATE_LINKS[key]) brokerBtns[i].setAttribute("href", AFFILIATE_LINKS[key]);
+  }
+
+  /* ---------- Helpers ---------- */
+  function num(id){
+    var v = parseFloat(document.getElementById(id).value);
+    return isNaN(v) ? 0 : v;
+  }
+  function fmtMoney(n){
+    var sign = n < 0 ? "-" : "";
+    return sign + "$" + Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  function fmtPct(n){
+    return n.toLocaleString("en-US",{maximumFractionDigits:2}) + "%";
+  }
+  function setVal(id, text, positive){
+    var el = document.getElementById(id);
+    el.textContent = text;
+    el.classList.remove("pos","neg");
+    if (positive === true) el.classList.add("pos");
+    if (positive === false) el.classList.add("neg");
+  }
+
+  /* ---------- Tool 01: Leverage Calculator ---------- */
+  function calcLeverage(){
+    var capital  = num("capital");
+    var pctMove  = num("pctMove");
+    var leverage = num("leverage");
+
+    var gainPct  = pctMove * leverage;              // % gain on capital
+    var retDol   = capital * (gainPct / 100);       // $ return
+    var total    = capital + retDol;                // projected account value
+
+    setVal("levReturn", fmtMoney(retDol), retDol > 0 ? true : (retDol < 0 ? false : undefined));
+    setVal("levPct", fmtPct(gainPct), gainPct > 0 ? true : (gainPct < 0 ? false : undefined));
+    setVal("levTotal", fmtMoney(total), total >= capital ? true : false);
+
+    var txt = document.getElementById("levCalloutText");
+    if (retDol > 0) {
+      txt.innerHTML = "Ready to place this trade? A " + fmtMoney(retDol) +
+        " projected return is on the table. Execute your strategy on <strong>Webull</strong> or <strong>Robinhood</strong> and claim up to 10 free stocks upon sign-up.";
+    } else {
+      txt.innerHTML = "Ready to place this trade? Execute your strategy on <strong>Webull</strong> or <strong>Robinhood</strong> and claim up to 10 free stocks upon sign-up.";
+    }
+  }
+
+  ["capital","pctMove","leverage"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", calcLeverage);
   });
 
-  const capitalEl = document.getElementById('capital');
-  const priceIncreaseEl = document.getElementById('priceIncrease');
-  const leverageEl = document.getElementById('leverageSelect');
-  const outReturn = document.getElementById('outReturn');
-  const outPercent = document.getElementById('outPercent');
-  const outTotal = document.getElementById('outTotal');
-
-  function fmtUSD(n){
-    return n.toLocaleString('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2 });
-  }
-
-  function calcLeverage(){
-    const capital = parseFloat(capitalEl.value) || 0;
-    const pctIncrease = parseFloat(priceIncreaseEl.value) || 0;
-    const leverage = parseFloat(leverageEl.value) || 1;
-    const effectivePctGain = pctIncrease * leverage;
-    const totalReturn = capital * (effectivePctGain / 100);
-    const totalAccountValue = capital + totalReturn;
-    outReturn.textContent = fmtUSD(totalReturn);
-    outPercent.textContent = effectivePctGain.toFixed(2) + '%';
-    outTotal.textContent = fmtUSD(totalAccountValue);
-    outReturn.style.color = totalReturn < 0 ? '#ef4444' : '';
-  }
-  [capitalEl, priceIncreaseEl, leverageEl].forEach(el => el.addEventListener('input', calcLeverage));
-  calcLeverage();
-
-  const assetPriceEl = document.getElementById('assetPrice');
-  const rsiValueEl = document.getElementById('rsiValue');
-  const signalBox = document.getElementById('signalBox');
-  const signalLabel = document.getElementById('signalLabel');
-  const signalSub = document.getElementById('signalSub');
-  const target20 = document.getElementById('target20');
-  const target50 = document.getElementById('target50');
-  const target100 = document.getElementById('target100');
-
+  /* ---------- Tool 02: Buy Zone Signal ---------- */
   function calcBuyZone(){
-    const price = parseFloat(assetPriceEl.value) || 0;
-    const rsi = parseFloat(rsiValueEl.value);
-    signalBox.classList.remove('signal-buy','signal-sell','signal-neutral');
-    if(!isNaN(rsi) && rsi <= 30){
-      signalBox.classList.add('signal-buy');
-      signalLabel.textContent = 'BUY ZONE (Oversold)';
-      signalSub.textContent = 'RSI is at or below 30 — asset may be undervalued';
-    } else if(!isNaN(rsi) && rsi >= 70){
-      signalBox.classList.add('signal-sell');
-      signalLabel.textContent = 'SELL ZONE (Overbought)';
-      signalSub.textContent = 'RSI is at or above 70 — asset may be overextended';
-    } else {
-      signalBox.classList.add('signal-neutral');
-      signalLabel.textContent = 'NEUTRAL HOLD';
-      signalSub.textContent = 'RSI is in the mid-range — no strong signal';
-    }
-    target20.textContent = fmtUSD(price * 1.20);
-    target50.textContent = fmtUSD(price * 1.50);
-    target100.textContent = fmtUSD(price * 2.00);
-  }
-  [assetPriceEl, rsiValueEl].forEach(el => el.addEventListener('input', calcBuyZone));
-  calcBuyZone();
-</script>
+    var price = num("assetPrice");
+    var rsi   = num("rsi");
 
+    setVal("t20",  fmtMoney(price * 1.2), true);
+    setVal("t50",  fmtMoney(price * 1.5), true);
+    setVal("t100", fmtMoney(price * 2.0), true);
+
+    var badge = document.getElementById("signalBadge");
+    var note  = document.getElementById("signalNote");
+    badge.classList.remove("sig-buy","sig-sell","sig-neutral");
+
+    if (rsi <= 30) {
+      badge.textContent = "BUY ZONE (Oversold)";
+      badge.classList.add("sig-buy");
+      note.textContent = "RSI at or below 30 — selling pressure may be exhausted. Traders often watch this zone for entries.";
+    } else if (rsi >= 70) {
+      badge.textContent = "SELL ZONE (Overbought)";
+      badge.classList.add("sig-sell");
+      note.textContent = "RSI at or above 70 — momentum is stretched. Traders often use this zone to take profits.";
+    } else {
+      badge.textContent = "NEUTRAL";
+      badge.classList.add("sig-neutral");
+      note.textContent = "RSI between 30 and 70 — no extreme reading. Wait for a clearer signal or confirm with other indicators.";
+    }
+  }
+
+  ["assetPrice","rsi"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", calcBuyZone);
+  });
+
+  /* ---------- Bonus Matcher ---------- */
+  var filterBtns = document.querySelectorAll(".filter-btn");
+  var bonusCards = document.querySelectorAll(".bonus-card");
+
+  function setFilter(cat){
+    for (var b = 0; b < filterBtns.length; b++) {
+      filterBtns[b].classList.toggle("active", filterBtns[b].getAttribute("data-cat") === cat);
+    }
+    for (var c = 0; c < bonusCards.length; c++) {
+      bonusCards[c].classList.toggle("hidden", bonusCards[c].getAttribute("data-cat") !== cat);
+    }
+  }
+  for (var f = 0; f < filterBtns.length; f++) {
+    filterBtns[f].addEventListener("click", function(){
+      setFilter(this.getAttribute("data-cat"));
+    });
+  }
+
+  /* ---------- Mobile menu ---------- */
+  var menuBtn  = document.getElementById("menuBtn");
+  var navLinks = document.getElementById("navLinks");
+  menuBtn.addEventListener("click", function(){
+    var open = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  // Close menu after tapping a link (mobile)
+  var links = navLinks.querySelectorAll("a");
+  for (var l = 0; l < links.length; l++) {
+    links[l].addEventListener("click", function(){
+      navLinks.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded","false");
+    });
+  }
+
+  /* ---------- Footer year + initial render ---------- */
+  document.getElementById("year").textContent = new Date().getFullYear();
+  calcLeverage();
+  calcBuyZone();
+})();
+</script>
 </body>
 </html>
-```
