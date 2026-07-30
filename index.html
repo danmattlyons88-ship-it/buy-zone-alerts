@@ -3,665 +3,393 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BuyZone Alerts | Smart Trading Tools & Momentum Indicators</title>
-<meta name="description" content="Actionable market metrics, leverage calculators, and buy zone signal tools for smart traders.">
-
-<meta property="og:title" content="BuyZone Alerts | Smart Trading Tools">
-<meta property="og:description" content="Actionable market metrics, leverage calculators, and buy zone signal tools for smart traders.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://buyzonealerts.com">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BuyZone Alerts | Smart Trading Tools">
-<meta name="twitter:description" content="Actionable market metrics, leverage calculators, and buy zone signal tools for smart traders.">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23091210'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='900' fill='%2310b981' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-
+<title>Buy Zone Alerts — Deals, Storefronts & Market Tools</title>
+<meta name="description" content="Central hub for The Frugal Workin' Man — shop the storefronts, grab the referral deals, and check back for free market alerts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --emerald: #10b981;
-    --emerald-soft: rgba(16,185,129,0.12);
-    --emerald-border: rgba(16,185,129,0.25);
-    --bg: #0b0f0e;
-    --text: #e6f5ef;
-    --text-dim: #93a8a0;
-    --red: #ef4444;
+  :root {
+    --bg: #0f1522;
+    --bg-soft: #131b2b;
+    --surface: #1a2436;
+    --surface-hover: #202c42;
+    --border: #2a3750;
+    --text: #f2f5f8;
+    --text-dim: #97a5bd;
+    --text-faint: #6b7994;
+    --green: #7fd8a4;
+    --green-dim: #4fa374;
+    --gold: #e3b23c;
+    --radius: 18px;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background: radial-gradient(circle at 20% 0%, #0f1613 0%, #0b0f0e 40%, #090c0b 100%);
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
     color: var(--text);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
     min-height: 100vh;
-    overflow-x: hidden;
-  }
-  a{color:inherit; text-decoration:none;}
-  .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-  header{
-    position: sticky; top:0; z-index:60;
-    backdrop-filter: blur(14px);
-    background: rgba(9,12,11,0.75);
-    border-bottom: 1px solid var(--emerald-border);
-    overflow-x: hidden;
-  }
-  .nav{ display:flex; align-items:center; justify-content:space-between; padding: 18px 0; flex-wrap:nowrap; gap:12px; }
-  .logo{ font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; display:flex; align-items:center; gap:8px; flex-shrink:0; white-space:nowrap; }
-  .logo-dot{ width:10px; height:10px; border-radius:50%; background: var(--emerald); box-shadow: 0 0 12px 3px rgba(16,185,129,0.7); }
-  .logo span{color: var(--emerald);}
-  .links{ display:flex; gap:28px; font-size:0.9rem; color:var(--text-dim); flex-wrap:nowrap; white-space:nowrap; }
-  .links a:hover{color:var(--emerald);}
-  .menu-btn{
-    display:none; background:none; border:1px solid var(--emerald-border); border-radius:8px;
-    color: var(--text); width:40px; height:40px; cursor:pointer; font-size:1.2rem;
-    align-items:center; justify-content:center; flex-shrink:0;
-  }
-  .mobile-menu{ display:none; flex-direction:column; border-top: 1px solid var(--emerald-border); padding: 14px 24px 20px; gap: 4px; }
-  .mobile-menu a{ padding: 12px 4px; font-size: 0.95rem; color: var(--text-dim); border-bottom: 1px solid rgba(16,185,129,0.08); }
-  .mobile-menu a:hover{ color: var(--emerald); }
-  .mobile-menu.open{ display:flex; }
-  @media (max-width:900px){
-    .links{ display:none !important; }
-    .menu-btn{ display:flex !important; }
   }
 
-  .hero{ padding: 90px 0 70px; text-align:center; position:relative; }
-  .hero::before{
-    content:""; position:absolute; inset:0;
-    background: radial-gradient(ellipse at center top, rgba(16,185,129,0.14), transparent 60%);
-    pointer-events:none;
-  }
-  .pill{
-    display:inline-flex; align-items:center; gap:8px; border:1px solid var(--emerald-border);
-    background: var(--emerald-soft); padding:6px 16px; border-radius:999px; font-size:0.8rem;
-    color:var(--emerald); margin-bottom:24px; font-weight:600; letter-spacing:0.02em;
-  }
-  .hero h1{ font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight:800; letter-spacing:-0.03em; line-height:1.1; margin-bottom:20px; }
-  .hero h1 em{ font-style:normal; color: var(--emerald); text-shadow: 0 0 30px rgba(16,185,129,0.5); }
-  .hero p{ max-width:640px; margin:0 auto; color: var(--text-dim); font-size: 1.05rem; }
-  .hero-ctas{ margin-top: 34px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; padding: 12px 26px; border-radius: 10px;
-    font-weight:600; font-size:0.95rem; border:1px solid var(--emerald-border);
-    transition: all .25s ease; cursor:pointer;
-  }
-  .btn-primary{ background: var(--emerald); color: #06110c; border-color: var(--emerald); }
-  .btn-primary:hover{ box-shadow: 0 0 24px rgba(16,185,129,0.55); transform: translateY(-1px); }
-  .btn-ghost{ background: transparent; color: var(--text); }
-  .btn-ghost:hover{ border-color: var(--emerald); background: var(--emerald-soft); }
-
-  section{ padding: 60px 0; }
-  .section-head{ text-align:center; margin-bottom:44px; }
-  .section-head .tag{ color: var(--emerald); font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; }
-  .section-head h2{ font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight:800; letter-spacing:-0.02em; margin-top:10px; }
-  .section-head p{ color:var(--text-dim); max-width:560px; margin: 12px auto 0; font-size:0.98rem; }
-
-  .panel{
-    border: 1px solid var(--emerald-border); border-radius: 18px; padding: 32px;
-    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
-    position:relative; overflow:hidden;
-  }
-  .panel::before{
-    content:""; position:absolute; top:-40%; right:-20%; width:300px; height:300px;
-    background: radial-gradient(circle, rgba(16,185,129,0.15), transparent 70%); pointer-events:none;
-  }
-  .tool-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:28px; }
-  @media (max-width:820px){ .tool-grid{ grid-template-columns: 1fr; } }
-
-  .field{ margin-bottom:20px; }
-  .field label{ display:block; font-size:0.82rem; color:var(--text-dim); margin-bottom:8px; font-weight:600; letter-spacing:0.02em; }
-  .field input, .field select{
-    width:100%; background: rgba(255,255,255,0.02); border: 1px solid rgba(16,185,129,0.22);
-    border-radius: 10px; padding: 12px 14px; color: var(--text); font-size: 1rem; outline:none;
-    transition: border-color .2s ease, box-shadow .2s ease; font-family: inherit;
-  }
-  .field input:focus, .field select:focus{ border-color: var(--emerald); box-shadow: 0 0 0 3px rgba(16,185,129,0.15); }
-  .field select option{ background:#0b0f0e; color:var(--text); }
-
-  .micro-copy{
-    font-size:0.82rem; color: var(--text-dim); line-height:1.6;
-    border-left: 2px solid var(--emerald-border); padding: 10px 14px; margin-top: 4px;
-    background: rgba(16,185,129,0.04); border-radius: 0 8px 8px 0;
-  }
-  .micro-copy strong{ color: var(--emerald); }
-
-  .results{ border-top: 1px dashed rgba(16,185,129,0.25); padding-top: 20px; margin-top: 4px; display:flex; flex-direction:column; gap:14px; }
-  .result-row{ display:flex; justify-content:space-between; align-items:baseline; font-size:0.92rem; color:var(--text-dim); }
-  .result-row strong{ font-size:1.25rem; color:var(--text); font-weight:800; }
-  .result-row.highlight strong{ color: var(--emerald); }
-
-  .signal-box{ text-align:center; padding: 22px; border-radius: 14px; border: 1px solid var(--emerald-border); margin-bottom: 14px; transition: all .3s ease; }
-  .signal-box .signal-label{ font-size:1.3rem; font-weight:800; letter-spacing:0.03em; }
-  .signal-box .signal-sub{ font-size:0.85rem; color:var(--text-dim); margin-top:6px; }
-  .signal-buy{ border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.08); }
-  .signal-buy .signal-label{ color: var(--emerald); text-shadow:0 0 20px rgba(16,185,129,0.5); }
-  .signal-sell{ border-color: rgba(239,68,68,0.5); background: rgba(239,68,68,0.08); }
-  .signal-sell .signal-label{ color: var(--red); text-shadow:0 0 20px rgba(239,68,68,0.5); }
-  .signal-neutral{ border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
-  .signal-neutral .signal-label{ color: var(--text); }
-
-  .targets-label{
-    font-size:0.78rem; color: var(--text-dim); text-transform:uppercase; letter-spacing:0.06em;
-    font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:6px;
-  }
-  .targets-label .lock{ font-size:0.9rem; }
-
-  .target-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
-  @media (max-width:520px){ .target-grid{ grid-template-columns:1fr; } }
-  .target-card{ border:1px solid var(--emerald-border); border-radius:12px; padding:16px; text-align:center; background: rgba(16,185,129,0.03); }
-  .target-card .tc-label{ font-size:0.78rem; color:var(--text-dim); font-weight:600; }
-  .target-card .tc-value{ font-size:1.2rem; font-weight:800; color:var(--emerald); margin-top:6px; }
-
-  .example-box{
-    margin-top:16px; border:1px solid var(--emerald-border); border-radius:12px; padding:16px 18px;
-    background: rgba(16,185,129,0.05); font-size:0.88rem; color: var(--text-dim); line-height:1.6;
-  }
-  .example-box .ex-label{ color: var(--emerald); font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px; }
-
-  .toolkit{ margin-top: 36px; padding-top: 28px; border-top: 1px dashed rgba(16,185,129,0.22); }
-  .toolkit-label{ font-size:0.8rem; color:var(--text-dim); margin-bottom:16px; text-align:center; }
-  .toolkit-label strong{ color: var(--emerald); }
-  .toolkit-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
-  @media (max-width:700px){ .toolkit-grid{ grid-template-columns:1fr; } }
-  .toolkit-card{
-    border:1px solid var(--emerald-border); border-radius:12px; padding:16px; text-align:center;
-    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
-    display:flex; flex-direction:column; align-items:center; gap:8px; transition: all .2s ease;
-  }
-  .toolkit-card:hover{ transform: translateY(-3px); border-color: var(--emerald); }
-  .toolkit-card .tk-icon{
-    width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:0.85rem; background: var(--emerald-soft); color: var(--emerald);
-  }
-  .toolkit-card h4{ font-size:0.92rem; font-weight:800; }
-  .toolkit-card p{ font-size:0.75rem; color:var(--text-dim); }
-  .toolkit-card a{ font-size:0.82rem; font-weight:700; color: var(--emerald); margin-top:2px; }
-  .toolkit-card a:hover{ text-decoration: underline; }
-
-  .creator-strip{
-    text-align:center; padding: 14px 24px; font-size:0.82rem; color: var(--text-dim);
-    border-top: 1px solid var(--emerald-border); border-bottom: 1px solid var(--emerald-border);
-    background: rgba(16,185,129,0.04);
-  }
-  .creator-strip strong{ color: var(--emerald); font-weight:800; }
-
-  /* Mobile touch target tuning */
-  @media (max-width:640px){
-    .field input, .field select{ min-height:48px; font-size:16px; padding:13px 14px; }
-    .btn{ min-height:48px; padding:13px 22px; }
-    .toolkit-card a{ display:inline-block; padding:6px 0; }
-    .faq-question{ padding:20px; }
-    body{ overflow-x:hidden; }
-    .wrap{ padding: 0 18px; }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
   }
 
-  /* FAQ / Accordion */
-  .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:760px; margin:0 auto; }
-  .faq-item{
-    border:1px solid var(--emerald-border); border-radius:14px; overflow:hidden;
-    background: linear-gradient(180deg, rgba(16,185,129,0.04), rgba(16,185,129,0.01));
-  }
-  .faq-question{
-    width:100%; text-align:left; background:none; border:none; cursor:pointer;
-    padding: 18px 20px; display:flex; align-items:center; justify-content:space-between;
-    font-size:0.98rem; font-weight:700; color: var(--text); font-family:inherit; gap:12px;
-  }
-  .faq-question:hover{ color: var(--emerald); }
-  .faq-icon{ font-size:1.2rem; color:var(--emerald); font-weight:800; flex-shrink:0; transition: transform .25s ease; }
-  .faq-item.open .faq-icon{ transform: rotate(45deg); }
-  .faq-answer{
-    max-height:0; overflow:hidden; transition: max-height .3s ease, padding .3s ease;
-    padding: 0 20px; font-size:0.92rem; color: var(--text-dim); line-height:1.7;
-  }
-  .faq-item.open .faq-answer{ max-height:400px; padding: 0 20px 20px; }
-
-  .platform-category{ margin-bottom: 44px; }
-  .platform-category:last-child{ margin-bottom: 0; }
-  .category-label{
-    display:flex; align-items:center; gap:12px; font-size:0.8rem; font-weight:700;
-    letter-spacing:0.1em; text-transform:uppercase; color: var(--emerald); margin-bottom:18px;
-  }
-  .category-label::after{ content:""; flex:1; height:1px; background: linear-gradient(90deg, var(--emerald-border), transparent); }
-  .platform-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
-  @media (max-width:900px){ .platform-grid{ grid-template-columns: repeat(2,1fr); } }
-  @media (max-width:560px){ .platform-grid{ grid-template-columns: 1fr; } }
-  .platform-card{
-    border:1px solid var(--emerald-border); border-radius:16px; padding:24px 20px; text-align:center;
-    background: linear-gradient(180deg, rgba(16,185,129,0.05), rgba(16,185,129,0.01));
-    transition: all .25s ease; display:flex; flex-direction:column; align-items:center; gap:12px;
-  }
-  .platform-card:hover{ transform: translateY(-4px); border-color: var(--emerald); box-shadow: 0 8px 30px rgba(16,185,129,0.22); }
-  .platform-icon{
-    width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:1rem; background: var(--emerald-soft); border:1px solid var(--emerald-border); color: var(--emerald);
-  }
-  .platform-card h3{ font-size:1.02rem; font-weight:800; }
-  .platform-card p{ font-size:0.8rem; color:var(--text-dim); }
-  .platform-card .btn{ width:100%; justify-content:center; margin-top:auto; }
-
-  .affiliate-note{
-    text-align:center; font-size:0.78rem; color: var(--text-dim);
-    margin-top: 36px; padding-top: 20px; border-top: 1px dashed rgba(16,185,129,0.2);
+  /* ---------- Header ---------- */
+  header {
+    padding: 32px 0 8px;
+    text-align: center;
   }
 
-  footer{ border-top: 1px solid var(--emerald-border); padding: 40px 0 30px; margin-top: 40px; }
-  .disclaimer{
-    font-size:0.78rem; color: var(--text-dim); max-width: 760px; margin: 0 auto 20px;
-    text-align:center; line-height:1.7; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 20px;
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(127, 216, 164, 0.1);
+    border: 1px solid rgba(127, 216, 164, 0.35);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
   }
-  .footer-bottom{ text-align:center; font-size:0.82rem; color: var(--text-dim); }
-  .footer-bottom .brand{ color: var(--emerald); font-weight:700; }
+
+  .badge-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+  }
+
+  h1 {
+    font-family: 'Archivo Black', 'Work Sans', sans-serif;
+    font-size: clamp(32px, 8vw, 44px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 span {
+    color: var(--green);
+  }
+
+  .subhead {
+    color: var(--text-dim);
+    font-size: 16px;
+    max-width: 460px;
+    margin: 0 auto 8px;
+  }
+
+  /* ---------- Section labels ---------- */
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 40px 0 14px;
+    padding-left: 2px;
+  }
+
+  /* ---------- Storefront cards ---------- */
+  .store-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .store-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 18px 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    overflow: hidden;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .store-card:active {
+    transform: scale(0.98);
+    border-color: rgba(127, 216, 164, 0.55);
+    box-shadow: 0 0 0 1px rgba(127, 216, 164, 0.25), 0 0 18px rgba(127, 216, 164, 0.25);
+  }
+
+  @media (hover: hover) {
+    .store-card:hover {
+      background: var(--surface-hover);
+      border-color: rgba(127, 216, 164, 0.5);
+      box-shadow: 0 0 0 1px rgba(127, 216, 164, 0.2), 0 0 22px rgba(127, 216, 164, 0.22);
+    }
+  }
+
+  /* live pulse indicator */
+  .pulse-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 7px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.7; }
+    70% { transform: scale(2.6); opacity: 0; }
+    100% { transform: scale(2.6); opacity: 0; }
+  }
+
+  /* signature clipped price-tag corner */
+  .store-card::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 44px;
+    height: 44px;
+    background: var(--green);
+    transform: rotate(45deg);
+    opacity: 0.15;
+  }
+
+  .store-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    color: var(--green);
+  }
+
+  .store-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .store-name {
+    font-weight: 700;
+    font-size: 16.5px;
+    margin: 0 0 2px;
+  }
+
+  .store-desc {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .store-arrow {
+    flex-shrink: 0;
+    color: var(--text-faint);
+    font-size: 20px;
+  }
+
+  /* ---------- Whatnot referral card (distinct — it's a signup, not a storefront) ---------- */
+  .deal-card {
+    background: linear-gradient(135deg, rgba(227, 178, 60, 0.12), rgba(227, 178, 60, 0.03));
+    border: 1px solid rgba(227, 178, 60, 0.35);
+  }
+
+  .deal-card .store-icon {
+    background: rgba(227, 178, 60, 0.12);
+    border-color: rgba(227, 178, 60, 0.4);
+    color: var(--gold);
+  }
+
+  .deal-card::before {
+    background: var(--gold);
+  }
+
+  .pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(227, 178, 60, 0.15);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ---------- Coming soon / market alerts ---------- */
+  .soon-card {
+    background: var(--bg-soft);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 26px 20px;
+    text-align: center;
+  }
+
+  .soon-icon {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 14px;
+    border-radius: 12px;
+    background: rgba(127, 216, 164, 0.08);
+    border: 1px solid rgba(127, 216, 164, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .soon-card h3 {
+    font-size: 17px;
+    margin: 0 0 6px;
+  }
+
+  .soon-card p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    margin: 0;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .soon-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 56px;
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 12.5px;
+  }
+
+  footer a {
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+
+  .footer-tip {
+    color: var(--text-dim);
+    font-size: 12.5px;
+    margin: 0 0 10px;
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<header>
-  <div class="wrap nav">
-    <div class="logo"><span class="logo-dot"></span>Buy<span>Zone</span> Alerts</div>
-    <nav class="links">
-      <a href="#leverage">Leverage Calculator</a>
-      <a href="#buyzone">Buy Zone Signal</a>
-      <a href="#faq">FAQ</a>
-      <a href="/blog/">Blog</a>
-      <a href="#platforms">Platforms</a>
-    </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#leverage">Leverage Calculator</a>
-    <a href="#buyzone">Buy Zone Signal</a>
-    <a href="#faq">FAQ</a>
-    <a href="/blog/">Blog</a>
-    <a href="#platforms">Platforms</a>
-  </div>
-</header>
+  <header>
+    <div class="badge-tag">Frugal Workin' Man</div>
+    <h1>Deals move fast.<br>Shop <span>smart</span>.</h1>
+    <p class="subhead">New inventory added weekly. Tap a storefront below to shop active listings or grab exclusive sign-up perks.</p>
+  </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="pill">⚡ Zero Fluff. Just Signals.</div>
-    <h1>Skip the math. Know your <em>Buy Zone</em> instantly.</h1>
-    <p>Type in a price. Get your zone, your targets, your leverage — done. No spreadsheets, no guesswork, no manual math during a trade.</p>
-    <div class="hero-ctas">
-      <a href="#leverage" class="btn btn-primary">Try the Calculators</a>
-      <a href="#platforms" class="btn btn-ghost">Explore Platforms</a>
-    </div>
-  </div>
-</section>
+  <div class="section-label">Shop the storefronts</div>
+  <div class="store-grid">
 
-<div class="creator-strip">
-  Built by <strong>The Frugal Workin' Man</strong> — real tools for everyday traders, zero fluff.
+    <a class="store-card" href="https://ebay.us/m/XJ7nVI" target="_blank" rel="noopener">
+      <div class="store-icon">eB</div>
+      <div class="store-info">
+        <p class="store-name"><span class="pulse-dot"></span>eBay Store</p>
+        <p class="store-desc">Main flip inventory — new listings weekly</p>
+      </div>
+      <div class="store-arrow">→</div>
+    </a>
+
+    <a class="store-card" href="https://poshmark.com/closet/danmattlyons888" target="_blank" rel="noopener">
+      <div class="store-icon">Po</div>
+      <div class="store-info">
+        <p class="store-name"><span class="pulse-dot"></span>Poshmark Closet</p>
+        <p class="store-desc">Clothing &amp; accessory finds</p>
+      </div>
+      <div class="store-arrow">→</div>
+    </a>
+
+    <a class="store-card" href="https://www.mercari.com/u/thefrugalworkinman?sv=0" target="_blank" rel="noopener">
+      <div class="store-icon">Me</div>
+      <div class="store-info">
+        <p class="store-name"><span class="pulse-dot"></span>Mercari Shop</p>
+        <p class="store-desc">thefrugalworkinman — bin store finds</p>
+      </div>
+      <div class="store-arrow">→</div>
+    </a>
+
+    <a class="store-card" href="https://www.depop.com/the_frugal_workin_man" target="_blank" rel="noopener">
+      <div class="store-icon">De</div>
+      <div class="store-info">
+        <p class="store-name"><span class="pulse-dot"></span>Depop Shop</p>
+        <p class="store-desc">the_frugal_workin_man</p>
+      </div>
+      <div class="store-arrow">→</div>
+    </a>
+
+  </div>
+
+  <div class="section-label">Referral deals</div>
+  <div class="store-grid">
+    <a class="store-card deal-card" href="https://whatnot.com/invite/deals4less12" target="_blank" rel="noopener">
+      <div class="store-icon">Wh</div>
+      <div class="store-info">
+        <p class="store-name"><span class="pulse-dot"></span>Whatnot Sign-Up <span class="pill">Bonus</span></p>
+        <p class="store-desc">Get up to $200 in free credit — sign up through this link</p>
+      </div>
+      <div class="store-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="section-label">Coming soon</div>
+  <div class="soon-card">
+    <div class="soon-icon">📈</div>
+    <h3>Market Alerts &amp; Trade Signals</h3>
+    <p>Free chart tools and market alert embeds are landing here soon.</p>
+    <span class="soon-tag">In progress</span>
+  </div>
+
+  <footer>
+    <p class="footer-tip">💡 Tip: Bookmark this page or add to your home screen for quick access to new drops.</p>
+    <p>The Frugal Workin' Man · buyzonealerts.com</p>
+  </footer>
+
 </div>
-
-<section id="leverage">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Tool 01</div>
-      <h2>Options & Stock Leverage Calculator</h2>
-      <p>See your projected return instantly as you adjust capital, expected price movement, and leverage.</p>
-    </div>
-    <div class="panel">
-      <div class="tool-grid">
-        <div>
-          <div class="field">
-            <label for="capital">Capital Invested ($)</label>
-            <input type="number" id="capital" value="1000" min="0" step="1">
-          </div>
-          <div class="field">
-            <label for="priceIncrease">Est. Underlying Price Increase (%)</label>
-            <input type="number" id="priceIncrease" value="10" step="0.1">
-          </div>
-          <div class="field">
-            <label for="leverageSelect">Effective Leverage Multiple</label>
-            <select id="leverageSelect">
-              <option value="1">1x</option>
-              <option value="2" selected>2x</option>
-              <option value="3">3x</option>
-              <option value="5">5x</option>
-              <option value="10">10x</option>
-              <option value="15">15x</option>
-              <option value="20">20x</option>
-            </select>
-          </div>
-          <p class="micro-copy"><strong>How to use:</strong> Type in your numbers above — the results update automatically as you type. Nothing to click or submit.</p>
-        </div>
-        <div class="results">
-          <div class="result-row"><span>Total Estimated Return</span><strong id="outReturn">$0.00</strong></div>
-          <div class="result-row highlight"><span>Percentage Gain</span><strong id="outPercent">0.00%</strong></div>
-          <div class="result-row"><span>Projected Total Account Value</span><strong id="outTotal">$0.00</strong></div>
-          <div class="example-box"><span class="ex-label">Real example</span>SPY is at $500 and you're eyeing 0DTE calls. You think it moves 2% today, and your position acts like 5x leverage. Plug in $1,000 / 2% / 5x — you'll see the payout before you risk a dollar.</div>
-        </div>
-      </div>
-      <div class="toolkit">
-        <div class="toolkit-label">🛠️ <strong>Execute this trade</strong> — the platforms built for options & leveraged plays</div>
-        <div class="toolkit-grid">
-          <div class="toolkit-card">
-            <div class="tk-icon">RH</div>
-            <h4>Robinhood</h4>
-            <p>Fast options execution, zero commission</p>
-            <a href="https://join.robinhood.com/daniell-767703" target="_blank" rel="sponsored noopener noreferrer">Claim Free Stock →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">WB</div>
-            <h4>Webull</h4>
-            <p>Advanced options chain & charting built in</p>
-            <a href="https://www.webull.com/s/3KhtemAIBUelDQOK2i" target="_blank" rel="sponsored noopener noreferrer">Get 10 Free Shares →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">SF</div>
-            <h4>SoFi Invest</h4>
-            <p>Simple active investing, no fee active trades</p>
-            <a href="https://www.sofi.com/invite/invest?gcp=95cff9d0-6db2-4412-ac70-a5be3f100715&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer">Get $25 Free →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="buyzone">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Tool 02</div>
-      <h2>20% Buy Zone Signal & Target Calculator</h2>
-      <p>Enter the current price and RSI to get an instant zone read plus profit-taking targets.</p>
-    </div>
-    <div class="panel">
-      <div class="tool-grid">
-        <div>
-          <div class="field">
-            <label for="assetPrice">Current Asset Price ($)</label>
-            <input type="number" id="assetPrice" value="100" min="0" step="0.01">
-          </div>
-          <div class="field">
-            <label for="rsiValue">Current RSI Value (0–100)</label>
-            <input type="number" id="rsiValue" value="28" min="0" max="100" step="1">
-          </div>
-          <p class="micro-copy"><strong>How to use:</strong> Just type in the price and RSI — everything below updates instantly. The signal and target boxes are results only, not buttons.</p>
-        </div>
-        <div>
-          <div id="signalBox" class="signal-box signal-buy">
-            <div class="signal-label" id="signalLabel">BUY ZONE (Oversold)</div>
-            <div class="signal-sub" id="signalSub">RSI is at or below 30 — asset may be undervalued</div>
-          </div>
-          <div class="targets-label"><span class="lock">🔒</span> Profit Targets (calculated automatically — nothing to click)</div>
-          <div class="target-grid">
-            <div class="target-card"><div class="tc-label">+20% Target</div><div class="tc-value" id="target20">$0.00</div></div>
-            <div class="target-card"><div class="tc-label">+50% Target</div><div class="tc-value" id="target50">$0.00</div></div>
-            <div class="target-card"><div class="tc-label">+100% Target</div><div class="tc-value" id="target100">$0.00</div></div>
-          </div>
-          <div class="example-box"><span class="ex-label">Real example</span>A coin you're watching drops to $0.42 and RSI reads 24. That's a BUY ZONE signal — the calculator instantly shows your targets: $0.50, $0.63, and $0.84, so you know exactly where to take profit before you buy.</div>
-        </div>
-      </div>
-      <div class="toolkit">
-        <div class="toolkit-label">🛠️ <strong>Execute this trade</strong> — the exact exchanges to buy the dip</div>
-        <div class="toolkit-grid">
-          <div class="toolkit-card">
-            <div class="tk-icon">CB</div>
-            <h4>Coinbase</h4>
-            <p>Fastest way to buy crypto in the zone</p>
-            <a href="https://coinbase.com/join/CR9AB53?src=android-link" target="_blank" rel="sponsored noopener noreferrer">Trade & Earn →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">KR</div>
-            <h4>Kraken Pro</h4>
-            <p>Tighter spreads for active buy zone entries</p>
-            <a href="https://invite.kraken.com/JDNW/9gmzhewe" target="_blank" rel="sponsored noopener noreferrer">Get Up to $200 →</a>
-          </div>
-          <div class="toolkit-card">
-            <div class="tk-icon">SF</div>
-            <h4>SoFi Crypto</h4>
-            <p>Buy, hold, and track it all in one app</p>
-            <a href="https://www.sofi.com/invite/crypto?gcp=64a4dd1b-e0d8-4bb9-99fb-cad5787aad11&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer">Get $25 in Crypto →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Help</div>
-      <h2>Frequently Asked Questions</h2>
-      <p>New here? Start with these — they cover the most common questions about the tools above.</p>
-    </div>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-question">What are the three boxes under the Buy Zone signal?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Those are your <strong>profit targets</strong> — not buttons. They automatically show you the price the asset would reach if it went up 20%, 50%, or 100% from the price you typed in. There's nothing to click; they're just there to show you what to watch for if you're planning when to take profit.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Do I need to click anything to get results?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">No. Both calculators update automatically the moment you type a new number into any input box. There's no "submit" or "calculate" button — just type, and the results change instantly.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">What does BUY ZONE, SELL ZONE, and NEUTRAL mean?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><strong>BUY ZONE</strong> means the RSI you entered is 30 or below — the asset has been sold off heavily and may be undervalued. <strong>SELL ZONE</strong> means RSI is 70 or above — the asset has been bought up fast and may be overextended. <strong>NEUTRAL</strong> means RSI is in the middle (31–69) — no strong signal either way. This is a momentum read, not a guarantee.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Where do I find an asset's RSI value?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Most free charting platforms show RSI, including TradingView. Pull up the stock or crypto chart, add the RSI indicator, and read the current number off the chart — then type that number into the calculator.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">What does the Leverage Calculator actually tell me?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">It shows what your return would look like if you invest a certain amount of capital, the asset moves a certain percentage, and you're using leverage (like options or a leveraged position). It multiplies the price move by your leverage to show the effective gain — helpful for sizing a position before you enter it.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Are these tools giving me financial advice?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">No — these are educational calculators only. They do the math for you based on numbers you provide, but they don't recommend trades. Always do your own research and consider talking to a licensed financial advisor before making investment decisions.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="platforms">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Partners</div>
-      <h2>Recommended Trading Platforms &amp; Brokerages</h2>
-      <p>Tools we trust for banking, investing, and trading — organized so you can find what fits.</p>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Banking</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">CH</div>
-          <h3>Chime</h3>
-          <p>No-fee mobile banking &amp; early direct deposit.</p>
-          <a href="https://www.chime.com/r/daniellyons79/?c=s" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get $100 Bonus</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">SF</div>
-          <h3>SoFi Checking &amp; Savings</h3>
-          <p>Banking with cash bonuses up to $475.</p>
-          <a href="https://www.sofi.com/invite/money?gcp=0e4fe226-18e5-4c75-a070-68f6b48a0ae9&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get Signup Bonus</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Brokerages &amp; Investing</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">RH</div>
-          <h3>Robinhood</h3>
-          <p>Commission-free stock &amp; options trading.</p>
-          <a href="https://join.robinhood.com/daniell-767703" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Claim Your Free Stock</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">WB</div>
-          <h3>Webull</h3>
-          <p>Commission-free stock, options &amp; crypto trading.</p>
-          <a href="https://www.webull.com/s/3KhtemAIBUelDQOK2i" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Unlock 10 Free Shares</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">SF</div>
-          <h3>SoFi Invest</h3>
-          <p>Commission-free active investing account.</p>
-          <a href="https://www.sofi.com/invite/invest?gcp=95cff9d0-6db2-4412-ac70-a5be3f100715&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get $25 in Free Stock</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Crypto</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">CB</div>
-          <h3>Coinbase</h3>
-          <p>Buy, sell, and earn crypto with ease.</p>
-          <a href="https://coinbase.com/join/CR9AB53?src=android-link" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Trade Crypto &amp; Earn</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">KR</div>
-          <h3>Kraken Pro</h3>
-          <p>Advanced tools for serious crypto traders.</p>
-          <a href="https://invite.kraken.com/JDNW/9gmzhewe" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get Up to $200</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">SF</div>
-          <h3>SoFi Crypto</h3>
-          <p>Buy, sell, and hold crypto in one app.</p>
-          <a href="https://www.sofi.com/invite/crypto?gcp=64a4dd1b-e0d8-4bb9-99fb-cad5787aad11&isAliasGcp=false" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Get $25 in Crypto</a>
-        </div>
-        <div class="platform-card">
-          <div class="platform-icon">BC</div>
-          <h3>BTCC</h3>
-          <p>Crypto trading &amp; futures exchange.</p>
-          <a href="https://btcc.com/invite/Uf2atvv" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Earn Referral Rewards</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="platform-category">
-      <div class="category-label">Charting &amp; Tools</div>
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-icon">TV</div>
-          <h3>TradingView</h3>
-          <p>Advanced charting and market analysis tools.</p>
-          <a href="https://www.tradingview.com/pricing/?share_your_love=danmattlyons88&mobileapp=true" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary">Explore TradingView</a>
-        </div>
-      </div>
-    </div>
-
-    <p class="affiliate-note">Some links on this page are referral/affiliate links. If you sign up through them, BuyZone Alerts may earn a reward at no extra cost to you.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong> BuyZone Alerts tools are provided for informational and educational purposes only. They do not constitute financial, investment, or trading advice. All calculations are estimates and past performance is not indicative of future results. Trading stocks, options, and cryptocurrency involves substantial risk of loss, and leveraged/futures products carry elevated risk. Always conduct your own research and consult a licensed financial advisor before making investment decisions.
-    </div>
-    <div class="footer-bottom">&copy; <span id="year"></span> <span class="brand">BuyZone Alerts</span>. All rights reserved.</div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if(!isOpen){ item.classList.add('open'); }
-    });
-  });
-
-  const capitalEl = document.getElementById('capital');
-  const priceIncreaseEl = document.getElementById('priceIncrease');
-  const leverageEl = document.getElementById('leverageSelect');
-  const outReturn = document.getElementById('outReturn');
-  const outPercent = document.getElementById('outPercent');
-  const outTotal = document.getElementById('outTotal');
-
-  function fmtUSD(n){
-    return n.toLocaleString('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2 });
-  }
-
-  function calcLeverage(){
-    const capital = parseFloat(capitalEl.value) || 0;
-    const pctIncrease = parseFloat(priceIncreaseEl.value) || 0;
-    const leverage = parseFloat(leverageEl.value) || 1;
-    const effectivePctGain = pctIncrease * leverage;
-    const totalReturn = capital * (effectivePctGain / 100);
-    const totalAccountValue = capital + totalReturn;
-    outReturn.textContent = fmtUSD(totalReturn);
-    outPercent.textContent = effectivePctGain.toFixed(2) + '%';
-    outTotal.textContent = fmtUSD(totalAccountValue);
-    outReturn.style.color = totalReturn < 0 ? '#ef4444' : '';
-  }
-  [capitalEl, priceIncreaseEl, leverageEl].forEach(el => el.addEventListener('input', calcLeverage));
-  calcLeverage();
-
-  const assetPriceEl = document.getElementById('assetPrice');
-  const rsiValueEl = document.getElementById('rsiValue');
-  const signalBox = document.getElementById('signalBox');
-  const signalLabel = document.getElementById('signalLabel');
-  const signalSub = document.getElementById('signalSub');
-  const target20 = document.getElementById('target20');
-  const target50 = document.getElementById('target50');
-  const target100 = document.getElementById('target100');
-
-  function calcBuyZone(){
-    const price = parseFloat(assetPriceEl.value) || 0;
-    const rsi = parseFloat(rsiValueEl.value);
-    signalBox.classList.remove('signal-buy','signal-sell','signal-neutral');
-    if(!isNaN(rsi) && rsi <= 30){
-      signalBox.classList.add('signal-buy');
-      signalLabel.textContent = 'BUY ZONE (Oversold)';
-      signalSub.textContent = 'RSI is at or below 30 — asset may be undervalued';
-    } else if(!isNaN(rsi) && rsi >= 70){
-      signalBox.classList.add('signal-sell');
-      signalLabel.textContent = 'SELL ZONE (Overbought)';
-      signalSub.textContent = 'RSI is at or above 70 — asset may be overextended';
-    } else {
-      signalBox.classList.add('signal-neutral');
-      signalLabel.textContent = 'NEUTRAL HOLD';
-      signalSub.textContent = 'RSI is in the mid-range — no strong signal';
-    }
-    target20.textContent = fmtUSD(price * 1.20);
-    target50.textContent = fmtUSD(price * 1.50);
-    target100.textContent = fmtUSD(price * 2.00);
-  }
-  [assetPriceEl, rsiValueEl].forEach(el => el.addEventListener('input', calcBuyZone));
-  calcBuyZone();
-</script>
-
 </body>
 </html>
